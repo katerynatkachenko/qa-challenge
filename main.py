@@ -28,7 +28,9 @@ class TestStringMethods(unittest.TestCase):
         # usually finding By.XPATH not a good a example to use, but since the elements have no id's
         # and the class names are dynamically generated, I've used the xpath approach
 
-        self.driver.find_element(By.XPATH, "//*[@id=\"react-node\"]/div/div[1]/div[2]/div[2]").click()
+        add_customer_btn = self.driver.find_element(By.XPATH, "//*[@id=\"react-node\"]/div/div[1]/div[2]/div[2]")
+        add_customer_btn.click()
+
         company = self.driver.find_element(By.XPATH, "//*[@id=\"react-node\"]/div/div[2]/div[1]/input")
         company.click()
         company.send_keys(company_name)
